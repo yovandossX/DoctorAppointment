@@ -1,3 +1,4 @@
+using DoctorAppointmentScheduler.Domain.Data;
 using DoctorAppointmentScheduler.Domain.Models;
 using DoctorAppointmentScheduler.Infrastructure.RepositoryImplementation;
 using DoctorAppointmentScheduler.Infrastructure.RepositoryInterface;

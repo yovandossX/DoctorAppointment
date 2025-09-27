@@ -1,4 +1,5 @@
 ﻿using DoctorAppointmentScheduler.Application.DTOclass;
+using DoctorAppointmentScheduler.Domain.Data;
 using DoctorAppointmentScheduler.Domain.Models;
 using DoctorAppointmentScheduler.Infrastructure.RepositoryInterface;
 
