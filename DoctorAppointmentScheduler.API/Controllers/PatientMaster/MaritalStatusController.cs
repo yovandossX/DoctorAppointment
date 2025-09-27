@@ -29,9 +29,9 @@ namespace DoctorAppointmentScheduler.API.Controllers.PatientMaster
         }
 
         [HttpPut("{id:guid}")]
-        public ActionResult<string> Update(Guid statusId,[FromBody] string statusIdName)
+        public ActionResult<string> Update(Guid statusId,[FromBody] string statusName)
         {
-            var result = _maritalStatusRepository.updateMaritalStatus(statusId, statusIdName);
+            var result = _maritalStatusRepository.updateMaritalStatus(statusId, statusName);
             return Ok(result);
         }
 

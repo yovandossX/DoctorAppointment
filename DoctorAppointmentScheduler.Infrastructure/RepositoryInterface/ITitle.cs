@@ -4,10 +4,10 @@ namespace DoctorAppointmentScheduler.Infrastructure.RepositoryInterface
 {
     public interface ITitle
     {
-        string addOccupation(string Occupationname);
-        List<Occupationresponsedto> getallOccupation();
-        string deleteOccupation(Guid Occupationid);
-        string updateOccupation(Guid Occupationid, string Occupationname);
-       
+        string addTitle(string TitleName);
+        List<object> getallTitle();
+        string deleteTitle(Guid TitleId);
+        string updateTitle(Guid TitleId, string TitleName);
+
     }
 }

@@ -2,7 +2,7 @@
 using DoctorAppointmentScheduler.Infrastructure.RepositoryInterface;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DoctorAppointmentScheduler.API.Controllers.PatientMaster
+namespace DoctorAppointmentScheduler.API.Controllers.Patients
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -15,7 +15,7 @@ namespace DoctorAppointmentScheduler.API.Controllers.PatientMaster
             _titleRepository = titleRepository;
         }
         [HttpGet]
-        public ActionResult<List<Occupationresponsedto>> GetAllTitle()
+        public ActionResult<List<Occupationresponsedto>> GetAllPatients()
         {
             var result = _titleRepository.getallTitle();
             return Ok(result);

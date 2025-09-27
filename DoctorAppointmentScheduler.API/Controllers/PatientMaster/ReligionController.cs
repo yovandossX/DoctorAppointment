@@ -14,7 +14,7 @@ namespace DoctorAppointmentScheduler.API.Controllers.PatientMaster
             _religionRepository = religionRepository;
         }
         [HttpGet]
-        public ActionResult<List<object>> GetAllOccupations()
+        public ActionResult<List<object>> GetAllReligion()
         {
             var result = _religionRepository.GetAllReligion();
             return Ok(result);
@@ -28,9 +28,9 @@ namespace DoctorAppointmentScheduler.API.Controllers.PatientMaster
         }
 
         [HttpPut("{id:guid}")]
-        public ActionResult<string> Update(Guid id, [FromBody] string statusIdName)
+        public ActionResult<string> Update(Guid id, [FromBody] string religionName)
         {
-            var result = _religionRepository.updateReligion(id, statusIdName);
+            var result = _religionRepository.updateReligion(id, religionName);
             return Ok(result);
         }
 

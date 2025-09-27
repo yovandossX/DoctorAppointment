@@ -22,16 +22,16 @@ namespace DoctorAppointmentScheduler.API.Controllers.PatientMaster
         }
 
         [HttpPost]
-        public ActionResult<string> Add([FromBody] string occupationName)
+        public ActionResult<string> Add([FromBody] string countrynName)
         {
-            var result = _countryRepository.addCountry(occupationName);
+            var result = _countryRepository.addCountry(countrynName);
             return Ok(result);
         }
 
         [HttpPut("{id:guid}")]
-        public ActionResult<string> Update(Guid id, [FromBody] string occupationName)
+        public ActionResult<string> Update(Guid id, [FromBody] string countrynName)
         {
-            var result = _countryRepository.updateCountry(id, occupationName);
+            var result = _countryRepository.updateCountry(id, countrynName);
             return Ok(result);
         }
 
