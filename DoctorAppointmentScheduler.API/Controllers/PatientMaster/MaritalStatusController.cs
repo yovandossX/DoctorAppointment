@@ -8,37 +8,37 @@ namespace DoctorAppointmentScheduler.API.Controllers.PatientMaster
     [ApiController]
     public class MaritalStatusController : ControllerBase
     {
-        private readonly IOccupation _occupationRepository;
+        private readonly IMaritalStatusRepository _maritalStatusRepository;
 
-        public MaritalStatusController(IOccupation occupationRepository)
+        public MaritalStatusController(IMaritalStatusRepository maritalStatusRepository)
         {
-            _occupationRepository = occupationRepository;
+            _maritalStatusRepository = maritalStatusRepository;
         }
         [HttpGet]
-        public ActionResult<List<Occupationresponsedto>> GetAllOccupations()
+        public ActionResult<List<object>> GetAllMaritalStatus()
         {
-            var result = _occupationRepository.getallOccupation();
+            var result = _maritalStatusRepository.GetAllMaritalStatus();
             return Ok(result);
         }
 
         [HttpPost]
-        public ActionResult<string> Add([FromBody] string occupationName)
+        public ActionResult<string> Add([FromBody] string status)
         {
-            var result = _occupationRepository.addOccupation(occupationName);
+            var result = _maritalStatusRepository.addMaritalStatus(status);
             return Ok(result);
         }
 
         [HttpPut("{id:guid}")]
-        public ActionResult<string> Update(Guid id, [FromBody] string occupationName)
+        public ActionResult<string> Update(Guid statusId,[FromBody] string statusIdName)
         {
-            var result = _occupationRepository.updateOccupation(id, occupationName);
+            var result = _maritalStatusRepository.updateMaritalStatus(statusId, statusIdName);
             return Ok(result);
         }
 
         [HttpDelete("{id:guid}")]
-        public ActionResult<string> Delete(Guid id)
+        public ActionResult<string> Delete(Guid statusId)
         {
-            var result = _occupationRepository.deleteOccupation(id);
+            var result = _maritalStatusRepository.deleteMaritalStatus(statusId);
             return Ok(result);
         }
     }

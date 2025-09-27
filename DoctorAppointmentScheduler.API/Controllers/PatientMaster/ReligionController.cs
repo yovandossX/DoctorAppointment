@@ -1,5 +1,4 @@
-﻿using DoctorAppointmentScheduler.Application.DTOclass;
-using DoctorAppointmentScheduler.Infrastructure.RepositoryInterface;
+﻿using DoctorAppointmentScheduler.Infrastructure.RepositoryInterface;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DoctorAppointmentScheduler.API.Controllers.PatientMaster
@@ -8,37 +7,37 @@ namespace DoctorAppointmentScheduler.API.Controllers.PatientMaster
     [ApiController]
     public class ReligionController : ControllerBase
     {
-        private readonly IOccupation _occupationRepository;
+        private readonly IReligionRepository _religionRepository;
 
-        public ReligionController(IOccupation occupationRepository)
+        public ReligionController(IReligionRepository  religionRepository)
         {
-            _occupationRepository = occupationRepository;
+            _religionRepository = religionRepository;
         }
         [HttpGet]
-        public ActionResult<List<Occupationresponsedto>> GetAllOccupations()
+        public ActionResult<List<object>> GetAllOccupations()
         {
-            var result = _occupationRepository.getallOccupation();
+            var result = _religionRepository.GetAllReligion();
             return Ok(result);
         }
 
         [HttpPost]
-        public ActionResult<string> Add([FromBody] string occupationName)
+        public ActionResult<string> Add([FromBody] string status)
         {
-            var result = _occupationRepository.addOccupation(occupationName);
+            var result = _religionRepository.addRelogion(status);
             return Ok(result);
         }
 
         [HttpPut("{id:guid}")]
-        public ActionResult<string> Update(Guid id, [FromBody] string occupationName)
+        public ActionResult<string> Update(Guid id, [FromBody] string statusIdName)
         {
-            var result = _occupationRepository.updateOccupation(id, occupationName);
+            var result = _religionRepository.updateReligion(id, statusIdName);
             return Ok(result);
         }
 
         [HttpDelete("{id:guid}")]
         public ActionResult<string> Delete(Guid id)
         {
-            var result = _occupationRepository.deleteOccupation(id);
+            var result = _religionRepository.deleteReligion(id);
             return Ok(result);
         }
     }
