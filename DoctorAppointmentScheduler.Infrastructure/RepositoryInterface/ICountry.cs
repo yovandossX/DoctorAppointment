@@ -4,10 +4,10 @@ namespace DoctorAppointmentScheduler.Infrastructure.RepositoryInterface
 {
     public interface ICountry
     {
-        string addOccupation(string Occupationname);
-        List<Occupationresponsedto> getallOccupation();
-        string deleteOccupation(Guid Occupationid);
-        string updateOccupation(Guid Occupationid, string Occupationname);
-       
+        string addCountry(string Countryname);
+        List<object> getallCountry();
+        string deleteCountry(Guid CountryId);
+        string updateCountry(Guid CountryId, string Countryname);
+
     }
 }
