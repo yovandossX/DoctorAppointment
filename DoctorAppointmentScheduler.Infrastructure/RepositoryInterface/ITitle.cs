@@ -2,7 +2,7 @@
 
 namespace DoctorAppointmentScheduler.Infrastructure.RepositoryInterface
 {
-    public interface IOccupation
+    public interface ITitle
     {
         string addOccupation(string Occupationname);
         List<Occupationresponsedto> getallOccupation();
