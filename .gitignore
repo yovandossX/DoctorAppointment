@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/DoctorAppointmentScheduler.API/bin/Debug/net8.0
+/DoctorAppointmentScheduler.API/obj
+/DoctorAppointmentScheduler.Application/bin/Debug/net8.0
+/DoctorAppointmentScheduler.Application/obj
+/DoctorAppointmentScheduler.Domain/bin/Debug/net8.0
+/DoctorAppointmentScheduler.Domain/obj/Debug/net8.0
+/DoctorAppointmentScheduler.Domain/obj
+/DoctorAppointmentScheduler.Infrastructure/bin/Debug/net8.0
+/DoctorAppointmentScheduler.Infrastructure/obj
+/DoctorAppointmentScheduler.Service/bin/Debug/net8.0
+/DoctorAppointmentScheduler.Service/obj
