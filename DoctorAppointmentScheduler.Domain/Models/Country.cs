@@ -6,17 +6,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DoctorAppointmentScheduler.Domain.Models;
 
-[Table("occupation", Schema = "master")]
-public partial class Occupation
+[Table("country", Schema = "master")]
+public partial class Country
 {
     [Key]
-    [Column("occupationid")]
-    public Guid Occupationid { get; set; }
+    [Column("countryid")]
+    public Guid Countryid { get; set; }
 
-    [Column("occupationname")]
+    [Column("countryname")]
     [StringLength(100)]
-    public string Occupationname { get; set; } = null!;
+    public string Countryname { get; set; } = null!;
 
     [Column("isdeleted")]
-    public bool Isdeleted { get; set; }
+    public bool? Isdeleted { get; set; }
 }
