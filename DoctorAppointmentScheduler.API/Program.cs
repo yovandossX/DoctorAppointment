@@ -22,6 +22,7 @@ builder.Services.AddDbContext<DoctorappointmentContext>(options =>
 builder.Services.AddScoped<IOccupation, Occupationrepository>();
 builder.Services.AddScoped<IMaritalStatusRepository, MaritalStatusRepository>();
 builder.Services.AddScoped<IReligionRepository, ReligionRepository>();
+builder.Services.AddScoped<ICountry, CountryRepository>();
 
 // Add controllers
 builder.Services.AddControllers();
