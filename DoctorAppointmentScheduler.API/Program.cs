@@ -20,6 +20,8 @@ builder.Services.AddDbContext<DoctorappointmentContext>(options =>
 // Register repository with DI
 
 builder.Services.AddScoped<IOccupation, Occupationrepository>();
+builder.Services.AddScoped<IMaritalStatusRepository, MaritalStatusRepository>();
+builder.Services.AddScoped<IReligionRepository, ReligionRepository>();
 
 // Add controllers
 builder.Services.AddControllers();

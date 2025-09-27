@@ -16,13 +16,13 @@ namespace DoctorAppointmentScheduler.Infrastructure.RepositoryImplementation
         public string addMaritalStatus(string status)
         {
             if (string.IsNullOrWhiteSpace(status))
-                return "Occupation name cannot be empty";
+                return "Marital Status name cannot be empty";
 
             var exists = _context.Maritalstatuses
                 .Any(o => o.Maritalstatus1.ToLower() == status.ToLower() && !o.Isdeleted == false);
 
             if (exists)
-                return "Occupation already exists";
+                return "Marital Status already exists";
 
             var entity = new Maritalstatus
             {
@@ -31,27 +31,29 @@ namespace DoctorAppointmentScheduler.Infrastructure.RepositoryImplementation
 
             _context.Maritalstatuses.Add(entity);
             _context.SaveChanges();
-            return "Occupation added successfully";
+            return "Marital Status added successfully";
         }
 
         public string deleteMaritalStatus(Guid statusId)
         {
             var entity = _context.Maritalstatuses.FirstOrDefault(o => o.Maritalstatusid == statusId);
-            if (entity == null) return "Occupation not found";
+            if (entity == null) return "Marital Status not found";
 
             entity.Isdeleted = true;
             _context.SaveChanges();
-            return "Occupation deleted successfully";
+            return "Marital Status deleted successfully";
         }
         public List<object> GetAllMaritalStatus()
         {
             var data = _context.Maritalstatuses
+                .Where(o => o.Isdeleted == false)
                 .Select(o => new
                 {
                     id = o.Maritalstatusid,
                     Maritalstatus = o.Maritalstatus1,
                     isdeleted = o.Isdeleted
-                }).ToList<object>();
+                })
+                .ToList<object>();
 
             return data;
         }
@@ -59,11 +61,11 @@ namespace DoctorAppointmentScheduler.Infrastructure.RepositoryImplementation
         public string updateMaritalStatus(Guid statusId, string statusIdName)
         {
             var entity = _context.Maritalstatuses.FirstOrDefault(o => o.Maritalstatusid == statusId);
-            if (entity == null) return "Occupation not found";
+            if (entity == null) return "Marital Status not found";
 
             entity.Maritalstatus1 = statusIdName;
             _context.SaveChanges();
-            return "Occupation updated successfully";
+            return "Marital Status updated successfully";
         }
     }
 }
