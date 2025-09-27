@@ -22,6 +22,8 @@ public partial class DoctorappointmentContext : DbContext
 
     public virtual DbSet<Title> Titles { get; set; }
 
+    public virtual DbSet<User> Users { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.HasPostgresExtension("pgcrypto");
@@ -64,6 +66,13 @@ public partial class DoctorappointmentContext : DbContext
 
             entity.Property(e => e.Titleid).HasDefaultValueSql("gen_random_uuid()");
             entity.Property(e => e.Isdeleted).HasDefaultValue(false);
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.Userid).HasName("users_pkey");
+
+            entity.Property(e => e.Userid).HasDefaultValueSql("gen_random_uuid()");
         });
 
         OnModelCreatingPartial(modelBuilder);
