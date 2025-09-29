@@ -29,6 +29,7 @@ namespace DoctorAppointmentScheduler.Infrastructure.RepositoryImplementation
 
             if (user == null || user.Password != password)
             {
+                //return Unauthorized(new List<object>());
                 return new List<object>(); // return empty list if not found or wrong password
             }
 
